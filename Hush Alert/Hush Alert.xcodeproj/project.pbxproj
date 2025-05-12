@@ -6,20 +6,57 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		26C89B6E2DD13A2C002078B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 267F3E372DC8B06100FA8FAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26C89B622DD13A2B002078B9;
+			remoteInfo = "Hush Alert - Watch Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		267F3E3F2DC8B06100FA8FAA /* Hush Alert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hush Alert.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26C89B632DD13A2B002078B9 /* Hush Alert - Watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hush Alert - Watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26C89BC92DD1445C002078B9 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS11.0.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		26C89BFF2DD17C6C002078B9 /* Exceptions for "Hush Alert" folder in "Hush Alert" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Hush-Alert-Info.plist",
+			);
+			target = 267F3E3E2DC8B06100FA8FAA /* Hush Alert */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		267F3E412DC8B06100FA8FAA /* Hush Alert */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				26C89BFF2DD17C6C002078B9 /* Exceptions for "Hush Alert" folder in "Hush Alert" target */,
+			);
 			path = "Hush Alert";
+			sourceTree = "<group>";
+		};
+		26C89B642DD13A2B002078B9 /* Hush Alert - Watch Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Hush Alert - Watch Watch App";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		267F3E3C2DC8B06100FA8FAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26C89B602DD13A2B002078B9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +70,8 @@
 			isa = PBXGroup;
 			children = (
 				267F3E412DC8B06100FA8FAA /* Hush Alert */,
+				26C89B642DD13A2B002078B9 /* Hush Alert - Watch Watch App */,
+				26C89BC82DD1445B002078B9 /* Frameworks */,
 				267F3E402DC8B06100FA8FAA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +80,17 @@
 			isa = PBXGroup;
 			children = (
 				267F3E3F2DC8B06100FA8FAA /* Hush Alert.app */,
+				26C89B632DD13A2B002078B9 /* Hush Alert - Watch Watch App.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		26C89BC82DD1445B002078B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26C89BC92DD1445C002078B9 /* WatchConnectivity.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,6 +107,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				26C89B6F2DD13A2C002078B9 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				267F3E412DC8B06100FA8FAA /* Hush Alert */,
@@ -68,6 +117,28 @@
 			);
 			productName = "Hush Alert";
 			productReference = 267F3E3F2DC8B06100FA8FAA /* Hush Alert.app */;
+			productType = "com.apple.product-type.application";
+		};
+		26C89B622DD13A2B002078B9 /* Hush Alert - Watch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26C89B742DD13A2C002078B9 /* Build configuration list for PBXNativeTarget "Hush Alert - Watch Watch App" */;
+			buildPhases = (
+				26C89B5F2DD13A2B002078B9 /* Sources */,
+				26C89B602DD13A2B002078B9 /* Frameworks */,
+				26C89B612DD13A2B002078B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				26C89B642DD13A2B002078B9 /* Hush Alert - Watch Watch App */,
+			);
+			name = "Hush Alert - Watch Watch App";
+			packageProductDependencies = (
+			);
+			productName = "Hush Alert - Watch Watch App";
+			productReference = 26C89B632DD13A2B002078B9 /* Hush Alert - Watch Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -81,6 +152,9 @@
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					267F3E3E2DC8B06100FA8FAA = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					26C89B622DD13A2B002078B9 = {
 						CreatedOnToolsVersion = 16.0;
 					};
 				};
@@ -100,12 +174,20 @@
 			projectRoot = "";
 			targets = (
 				267F3E3E2DC8B06100FA8FAA /* Hush Alert */,
+				26C89B622DD13A2B002078B9 /* Hush Alert - Watch Watch App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		267F3E3D2DC8B06100FA8FAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26C89B612DD13A2B002078B9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +204,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		26C89B5F2DD13A2B002078B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		26C89B6F2DD13A2C002078B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26C89B622DD13A2B002078B9 /* Hush Alert - Watch Watch App */;
+			targetProxy = 26C89B6E2DD13A2C002078B9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		267F3E4B2DC8B06200FA8FAA /* Debug */ = {
@@ -252,8 +349,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Hush Alert/Preview Content\"";
+				DEVELOPMENT_TEAM = CR369Y47K3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Hush-Alert-Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "“We use the microphone to detect your baby’s cry.”";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -266,9 +366,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.academy.Hush-Alert";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -280,8 +384,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Hush Alert/Preview Content\"";
+				DEVELOPMENT_TEAM = CR369Y47K3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Hush-Alert-Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "“We use the microphone to detect your baby’s cry.”";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -294,9 +401,75 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.academy.Hush-Alert";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		26C89B722DD13A2C002078B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Hush Alert - Watch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = CR369Y47K3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Hush Alert - Watch";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.academy.Hush-Alert";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.academy.Hush-Alert.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		26C89B732DD13A2C002078B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Hush Alert - Watch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = CR369Y47K3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Hush Alert - Watch";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.academy.Hush-Alert";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.academy.Hush-Alert.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Release;
 		};
@@ -317,6 +490,15 @@
 			buildConfigurations = (
 				267F3E4E2DC8B06200FA8FAA /* Debug */,
 				267F3E4F2DC8B06200FA8FAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26C89B742DD13A2C002078B9 /* Build configuration list for PBXNativeTarget "Hush Alert - Watch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26C89B722DD13A2C002078B9 /* Debug */,
+				26C89B732DD13A2C002078B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
