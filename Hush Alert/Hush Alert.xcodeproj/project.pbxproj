@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		26C89C4D2DD5814C002078B9 /* BabyCryClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 26C89C4C2DD5814C002078B9 /* BabyCryClassifier.mlmodel */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		26C89B6E2DD13A2C002078B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -20,6 +24,7 @@
 		267F3E3F2DC8B06100FA8FAA /* Hush Alert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hush Alert.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C89B632DD13A2B002078B9 /* Hush Alert - Watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hush Alert - Watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C89BC92DD1445C002078B9 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS11.0.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
+		26C89C4C2DD5814C002078B9 /* BabyCryClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BabyCryClassifier.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +80,7 @@
 		26C89BC82DD1445B002078B9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				26C89C4C2DD5814C002078B9 /* BabyCryClassifier.mlmodel */,
 				26C89BC92DD1445C002078B9 /* WatchConnectivity.framework */,
 			);
 			name = Frameworks;
@@ -188,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26C89C4D2DD5814C002078B9 /* BabyCryClassifier.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
