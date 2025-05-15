@@ -15,12 +15,11 @@ struct Hush_AlertApp: App {
     
 
     init() {
-        // One cheap, direct Core-ML call on a zeroed Multi-Array.
         DispatchQueue.global(qos: .utility).async {
             let n = 44_100
             if let arr = try? MLMultiArray(shape: [NSNumber(value: n)],
                                            dataType: .float32),
-               let model = try? BabyCryClassifier(configuration: .init()) {
+               let model = try? BabyCryClassifier1(configuration: .init()) {
                 memset(arr.dataPointer, 0, n * MemoryLayout<Float32>.size)
                 _ = try? model.prediction(audioSamples: arr)
                 print("🔥 Core-ML weights loaded (only)")
@@ -33,7 +32,7 @@ struct Hush_AlertApp: App {
             if showLaunchScreen {
                 LaunchScreenView()
                     .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.8) {
                             showLaunchScreen = false
                         }
                     }

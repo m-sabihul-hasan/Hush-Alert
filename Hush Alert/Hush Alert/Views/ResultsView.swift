@@ -28,7 +28,7 @@ struct ResultsView: View {
                     .font(.system(size: 37, weight: .bold))
                     .foregroundColor(Color(hex: "#78D3F0"))
                     .multilineTextAlignment(.center)
-                    .padding(.top, 28)
+                    .padding(.vertical, 25)
 
                 Spacer(minLength: 16)
 
@@ -40,7 +40,7 @@ struct ResultsView: View {
                         rightText : item.label
                     )
                 }
-                .padding(.horizontal, 35)
+                .padding(.horizontal, 30)
                 .padding(.vertical, 6)
 
                 Spacer()
@@ -49,7 +49,7 @@ struct ResultsView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(maxWidth: 170)
-                    .padding(.bottom, 40)
+                    .padding(.vertical, 40)
             }
         }
         .onAppear { print("🟢 ResultsView.onAppear – showing bars") }
@@ -57,10 +57,16 @@ struct ResultsView: View {
         .toolbar(.hidden, for: .tabBar)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button("Done") {
-                    print("✅ Done tapped – returning to Home")
-                    dismiss()   // pop ResultsView
-                    onDone()    // pop ListeningView
+                Button(
+                    action: {
+                        print("✅ Done tapped – returning to Home")
+                        dismiss()   // pop ResultsView
+                        onDone()    // pop ListeningView
+                    }
+                ) {
+                    Text("Done")                         // ← the label
+                        .font(.system(size: 17, weight: .semibold))   // custom font
+                        .foregroundColor(Color(hex: "#78D3F0"))       // custom colour
                 }
             }
         }
@@ -82,7 +88,7 @@ private struct ProgressBarRow: View {
             GeometryReader { geo in
                 ZStack(alignment: .leading) {
                     Capsule()
-                        .fill(Color.white.opacity(0.3))
+                        .fill(Color.white.opacity(0.5))
                         .frame(height: 30)
 
                     Capsule()

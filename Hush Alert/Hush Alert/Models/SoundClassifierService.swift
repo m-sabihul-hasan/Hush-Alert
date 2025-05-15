@@ -10,12 +10,10 @@ import CoreML
 import SoundAnalysis
 import AVFoundation
 
-private let cryModel   = try! BabyCryClassifier(configuration: .init())
+private let cryModel   = try! BabyCryClassifier1(configuration: .init())
 
-// MARK: – Public factory
 enum SoundClassifierService {
 
-    /// Returns safe (start, stop) closures for live analysis.
     static func makeLiveAnalyzer()
         -> (start: () -> Void,
             stop : (@escaping ([String: Double]) -> Void) -> Void)
@@ -27,9 +25,6 @@ enum SoundClassifierService {
         var started = false
         let tapBus: AVAudioNodeBus = 0
 
-        //------------------------------------------------------
-        // start()
-        //------------------------------------------------------
         let start = {
             guard !started else { return }
             started = true
@@ -37,16 +32,14 @@ enum SoundClassifierService {
 
             let eng    = AVAudioEngine()
             let input  = eng.inputNode
-            let fmt    = input.outputFormat(forBus: tapBus) // actual HW format
+            let fmt    = input.outputFormat(forBus: tapBus)
 
-            // build analyzer with that format
             let sa     = SNAudioStreamAnalyzer(format: fmt)
             let req    = try! SNClassifySoundRequest(mlModel: cryModel.model)
             req.windowDuration = CMTime(seconds: 0.25, preferredTimescale: 48_000)
             req.overlapFactor  = 0.25
             try! sa.add(req, withObserver: collector)
 
-            // feed buffers
             input.installTap(onBus: tapBus,
                              bufferSize: 1_024,
                              format: fmt) { buf, time in
@@ -58,9 +51,6 @@ enum SoundClassifierService {
             analyzer = sa
         }
 
-        //------------------------------------------------------
-        // stop(…)
-        //------------------------------------------------------
         let stop = { (finish: @escaping ([String: Double]) -> Void) in
             guard started else { finish([:]); return }
             started = false
@@ -84,7 +74,6 @@ enum SoundClassifierService {
     }
 }
 
-// MARK: – Helper that stores highest probability per label
 private final class MaxAccumulator: NSObject, SNResultsObserving {
     private(set) var maxProbabilities: [String: Double] = [:]
 
@@ -96,5 +85,14 @@ private final class MaxAccumulator: NSObject, SNResultsObserving {
                 Double(c.confidence)
             )
         }
+    }
+}
+
+extension Dictionary where Key == String, Value == Double {
+    /// Returns a new dict whose values sum to 1.0 (empty dict returns itself).
+    func normalised() -> [String: Double] {
+        let total = values.reduce(0, +)
+        guard total > 0 else { return self }
+        return mapValues { $0 / total }
     }
 }

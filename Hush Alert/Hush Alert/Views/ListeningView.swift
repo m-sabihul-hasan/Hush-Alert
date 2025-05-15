@@ -5,6 +5,7 @@
 //  Created by Muhammad Sabihul Hasan on 15/05/25.
 //
 
+
 import SwiftUI
 
 struct ListeningView: View {
@@ -13,7 +14,7 @@ struct ListeningView: View {
 
     @StateObject private var monitor = AudioMonitor()
 
-    // live-analyzer closures for THIS run only
+    // live analyzer pair is recreated every appearance
     @State private var liveStart: (() -> Void)?
     @State private var liveStop : ((@escaping ([String: Double]) -> Void) -> Void)?
 
@@ -37,7 +38,7 @@ struct ListeningView: View {
             }
         }
         .onAppear { startCapture() }
-        .onDisappear { fullStop() }       // always clean up
+        .onDisappear { fullStop() }
         .navigationBarBackButtonHidden(true)
         .toolbar(.hidden, for: .tabBar)
         .toolbar {
@@ -58,27 +59,27 @@ struct ListeningView: View {
 
     // MARK: – capture / classify
     private func startCapture() {
-        // create a brand-new analyzer for this recording
+        // new analyzer each time
         let pair = SoundClassifierService.makeLiveAnalyzer()
         liveStart = pair.start
         liveStop  = pair.stop
 
-        liveStart?()                          // begin feeding buffers
+        liveStart?()
         monitor.start(duration: recordingDuration) {
             monitor.stop()
-            liveStop? { probs in
+            liveStop? { raw in
+                let probs = raw.normalised()   // 🔹 ensure they sum to 1.0
                 print("✅ ListeningView dict size =", probs.count)
-                if !probs.isEmpty {           // ignore empty late results
+                if !probs.isEmpty {
                     predictions = probs
                     showResults = true
                 }
             }
-            liveStart = nil                   // mark as finished
+            liveStart = nil
             liveStop  = nil
         }
     }
 
-    /// Ensures monitor *and* analyzer stop exactly once.
     private func fullStop() {
         monitor.stop()
         liveStop? { _ in }
@@ -87,7 +88,7 @@ struct ListeningView: View {
     }
 }
 
-// Ripple view unchanged
+// Ripple identical to previous
 private struct Ripple: View {
     var amplitude: CGFloat
     @State private var animate = false
@@ -118,4 +119,6 @@ private struct Ripple: View {
     }
 }
 
-#Preview { NavigationStack { ListeningView() } }
+
+
+//#Preview { NavigationStack { ListeningView() } }
