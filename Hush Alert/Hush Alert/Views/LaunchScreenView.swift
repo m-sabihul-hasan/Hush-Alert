@@ -35,7 +35,7 @@ struct LaunchScreenView: View {
                     .foregroundColor(.white)
                     .padding(.bottom, 50)
                 
-                Image("baby-sleep")
+                Image("baby-sleeping")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 300, height: 300)

@@ -22,22 +22,9 @@
 		26C89BC92DD1445C002078B9 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS11.0.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		26C89BFF2DD17C6C002078B9 /* Exceptions for "Hush Alert" folder in "Hush Alert" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"Hush-Alert-Info.plist",
-			);
-			target = 267F3E3E2DC8B06100FA8FAA /* Hush Alert */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		267F3E412DC8B06100FA8FAA /* Hush Alert */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				26C89BFF2DD17C6C002078B9 /* Exceptions for "Hush Alert" folder in "Hush Alert" target */,
-			);
 			path = "Hush Alert";
 			sourceTree = "<group>";
 		};
