@@ -27,12 +27,12 @@ struct TabsView: View {
                 }
 
 
-            SettingsView()
-                .tag(Tab.settings)
-                .tabItem {
-                    Label("Settings",
-                          systemImage: selection == .settings ? "gearshape.fill" : "gearshape")
-                }
+//            SettingsView()
+//                .tag(Tab.settings)
+//                .tabItem {
+//                    Label("Settings",
+//                          systemImage: selection == .settings ? "gearshape.fill" : "gearshape")
+//                }
         }
         .tint(Color(hex: "#A5DEFE"))
     }

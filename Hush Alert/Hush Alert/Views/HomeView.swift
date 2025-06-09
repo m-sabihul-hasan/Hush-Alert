@@ -36,9 +36,9 @@ struct HomeView: View {
                             .scaledToFit()
                             .frame(width: 250, height: 250)
                     }
-                    .padding(.vertical, 20)
+                    .padding(.vertical, 30)
 
-                    Spacer(minLength: 0)
+//                    Spacer(minLength: 0)
 
                     VStack(spacing: 16) {
                         
@@ -49,13 +49,13 @@ struct HomeView: View {
                         }
                         .buttonStyle(PrimaryButtonStyle())
                         
-                        Button {
-                            // TODO
-                        } label: {
-                            Label("Apple Watch", systemImage: "apple.logo")
-
-                        }
-                        .buttonStyle(PrimaryButtonStyle())
+//                        Button {
+//                            // TODO
+//                        } label: {
+//                            Label("Apple Watch", systemImage: "apple.logo")
+//
+//                        }
+//                        .buttonStyle(PrimaryButtonStyle())
                     }
                     .padding(.bottom, 70)
                 }
